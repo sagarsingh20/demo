@@ -1,0 +1,117 @@
+<div class="container">
+    <div class="card">
+        <form [formGroup]="editForm" (ngSubmit)='update(editForm)'>
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+                <h4>User Details</h4>
+            </nav>
+
+            <div class="form-group row">
+                <label for="fname" class="col-sm-2 col-form-label">FIRST NAME:</label>
+                <div class="col-sm-8">
+                    <input formControlName="firstname" type="text" class="form-control" id="fname" name="fname">
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <label for="lname" class="col-sm-2 col-form-label">LAST NAME:</label>
+                <div class="col-sm-8">
+                    <input formControlName="lastname" type="text" class="form-control" id="lname" name="lname">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">EMAIL:</label>
+                <div class="col-sm-8">
+                    <input formControlName="email" type="email" class="form-control" id="email" name="email">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="gender" class="col-sm-2 col-form-label">GENDER:</label>
+                <div class="col-sm-8 ">
+                    <input formControlName="gender" type="text" class="form-control" id="gender" name="gender">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fit" class="col-sm-2 col-form-label">FITNESS GOAL:</label>
+                <div class="col-sm-8">
+                    <input formControlName="fitness_goal" type="text" class="form-control" id="fit" name="fit">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="pic" class="col-sm-2 col-form-label">Profile Pic:</label>
+                <div class="col-sm-4">
+                    <input type="file" (change)="onFileChanged($event)">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="dob" class="col-sm-2 col-form-label"> DOB:</label>
+                <div class="col-sm-4">
+                    <input type="date" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="subscription">User Subscription:</label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="subs">
+                        <option *ngFor="let subs of sub" [ngValue]='subs'>
+                        {{subs.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="height" class="col-sm-2 col-form-label">HEIGHT:</label>
+                <div class="col-sm-8">
+                    <input formControlName="height" type="text" class="form-control" id="height" name="height">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="weight" class="col-sm-2 col-form-label">WEIGHT:</label>
+                <div class="col-sm-8">
+                    <input formControlName="weight" type="text" class="form-control" id="weight" name="weight">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-3 checkbox">
+                    <label><input formControlName="is_premium" type="checkbox" value="">Is Premium User</label>
+                </div>
+                <div class="col-sm-3 checkbox">
+                    <label><input formControlName="is_facebook_user" type="checkbox" value="">Is Facebook User</label>
+                </div>
+                <div class="col-sm-3 checkbox">
+                    <label><input formControlName="is_apple_user" type="checkbox" value="">Is Apple User</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-3 checkbox">
+                    <label><input formControlName="push_notifications" type="checkbox" value="">Push Notification</label>
+                </div>
+                <div class="col-sm-3 checkbox">
+                    <label><input formControlName="news_feed_notifications" type="checkbox" value="">News Feed Notifications</label>
+                </div>
+                <div class="col-sm-3 checkbox">
+                    <label><input formControlName="email_subsciption" type="checkbox" value="">Is Emai Subscription</label>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-8">
+                        <button type="submit" class="btn btn-primary" (click)="data()">Update Info</button>
+                        <button type="button" class="btn btn-primary">Cancel</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

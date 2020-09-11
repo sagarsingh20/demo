@@ -1,0 +1,49 @@
+<div class="gap">
+    <div class="card">
+        <!-- <div class="container"> -->
+        <img src="/assets/icon-social-people.svg">
+        <h3>{{user.length}} Person</h3>
+        <!-- </div> -->
+    </div>
+
+    <!-- <div class="tat">
+        <label for="Patients">Patient Type:</label>
+        <select name="Patient" id="patient">
+            <option value="all">All</option>
+            <option value="scoliosis">Scoliosis</option>
+        </select>
+        <label for="download" class="dwn">Download All<img src="/assets/icon_action_get_app.svg">
+        </label>
+    </div> -->
+
+    <table class="table table-bordered" id="user">
+
+        <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Email</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Gender</th>
+                <th></th>
+
+            </tr>
+            <tr *ngFor="let user of user">
+                <td>{{user.id}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.gender}}</td>
+                <td style='padding:5px'>
+                    <a class="btn btn-sm text-white btn-primary" [routerLink]="['/view/'+user.id]">View</a>
+                    <a class="btn btn-sm text-white btn-primary" [routerLink]="['/edit/'+user.id]">Edit</a>
+
+                </td>
+            </tr>
+        </thead>
+
+    </table>
+    <!-- <app-shared [table]="table"></app-shared> -->
+</div>
+<router-outlet></router-outlet>
